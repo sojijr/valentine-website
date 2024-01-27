@@ -1,0 +1,12 @@
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    cursor: url('./pointer.png'), auto;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    background: #111;
+}
