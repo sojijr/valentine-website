@@ -161,7 +161,7 @@ function drawText() {
         context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${thirdOpacity})`;
         context.textAlign = `center`;
-        context.fillText("Happy Valentines Day <3", canvas.width/2, (canvas.height/2 + 100));
+        context.fillText("Happy Valentine's Day <3", canvas.width/2, (canvas.height/2 + 100));
         thirdOpacity = thirdOpacity + 0.01;
     }   
     
