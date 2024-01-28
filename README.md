@@ -11,6 +11,7 @@ Modifications made:
 
 - background stars blinking
 - cursor change
+- mobile responsiveness
 
 ## License
 

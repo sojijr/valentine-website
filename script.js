@@ -1,5 +1,5 @@
 var canvas = document.getElementById("starfield");
-canvas.width  = window.innerWidth;
+canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var context = canvas.getContext("2d");
@@ -48,19 +48,27 @@ function updateStars() {
     }
 }
 
+function drawTextWithLineBreaks(lines, x, y, fontSize, lineHeight) {
+    lines.forEach((line, index) => {
+        context.fillText(line, x, y + index * (fontSize + lineHeight));
+    });
+}
+
 function drawText() {
+    var fontSize = Math.min(30, window.innerWidth / 25); // Adjust font size based on screen width
+    var lineHeight = 8;
+
+    context.font = fontSize + "px Comic Sans MS";
+    context.textAlign = "center";
+
     if(frameNumber < 300){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
         context.fillText("everyday day I cannot believe how lucky I am", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     //fades out the text by decreasing the opacity
     if(frameNumber >= 300 && frameNumber < 600){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
         context.fillText("everyday day I cannot believe how lucky I am", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
@@ -70,17 +78,25 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 600 && frameNumber < 900){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
-        context.fillText("amongst trillions and trillions of stars, over billions of years", canvas.width/2, canvas.height/2);
+
+        if (window.innerWidth < 600) {
+            drawTextWithLineBreaks(["amongst trillions and trillions of stars,", "over billions of years"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+        } else {
+            context.fillText("amongst trillions and trillions of stars, over billions of years", canvas.width/2, canvas.height/2);
+        }
+
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 900 && frameNumber < 1200){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
-        context.fillText("amongst trillions and trillions of stars, over billions of years", canvas.width/2, canvas.height/2);
+        
+        if (window.innerWidth < 600) {
+            drawTextWithLineBreaks(["amongst trillions and trillions of stars,", "over billions of years"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+        } else {
+            context.fillText("amongst trillions and trillions of stars, over billions of years", canvas.width/2, canvas.height/2);
+        }
+
         opacity = opacity - 0.01;
     }
 
@@ -88,16 +104,12 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 1200 && frameNumber < 1500){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
         context.fillText("to be alive, and to get to spend this life with you", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 1500 && frameNumber < 1800){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
         context.fillText("to be alive, and to get to spend this life with you", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
@@ -106,16 +118,12 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 1800 && frameNumber < 2100){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
         context.fillText("is so incredibly, unfathomably unlikely", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 2100 && frameNumber < 2400){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
         context.fillText("is so incredibly, unfathomably unlikely", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
@@ -124,17 +132,25 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 2400 && frameNumber < 2700){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
-        context.fillText("and yet here I am to get the impossible chance to get to know you", canvas.width/2, canvas.height/2);
+
+        if (window.innerWidth < 600) {
+            drawTextWithLineBreaks(["and yet here I am to get the impossible", "chance to get to know you"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+        } else {
+            context.fillText("and yet here I am to get the impossible chance to get to know you", canvas.width/2, canvas.height/2);
+        }
+
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 2700 && frameNumber < 3000){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
-        context.fillText("and yet here I am to get the impossible chance to get to know you", canvas.width/2, canvas.height/2);
+
+        if (window.innerWidth < 600) {
+            drawTextWithLineBreaks(["and yet here I am to get the impossible", "chance to get to know you"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+        } else {
+            context.fillText("and yet here I am to get the impossible chance to get to know you", canvas.width/2, canvas.height/2);
+        }
+        
         opacity = opacity - 0.01;
     }
 
@@ -142,26 +158,33 @@ function drawText() {
         opacity = 0;
     }
     if(frameNumber > 3000 && frameNumber < 99999){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.textAlign = `center`;
-        context.fillText("I love you so much {name}, more than all the time and space in the universe can contain", canvas.width/2, canvas.height/2);
+
+        if (window.innerWidth < 600) {
+            drawTextWithLineBreaks(["I love you so much {name}, more than", "all the time and space in the universe can contain"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+        } else {
+            context.fillText("I love you so much {name}, more than all the time and space in the universe can contain", canvas.width/2, canvas.height/2);
+        }
+
         opacity = opacity + 0.01;
     }
     
     if(frameNumber >= 3300 && frameNumber < 99999){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${secondOpacity})`;
-        context.textAlign = `center`;
-        context.fillText("and I can't wait to spend all the time in the world to share that love with you!", canvas.width/2, (canvas.height/2 + 50));
+
+
+        if (window.innerWidth < 600) {
+            drawTextWithLineBreaks(["and I can't wait to spend all the time in", "the world to share that love with you!"], canvas.width / 2, (canvas.height/2 + 70), fontSize, lineHeight);
+        } else {
+            context.fillText("and I can't wait to spend all the time in the world to share that love with you!", canvas.width/2, (canvas.height/2 + 50));
+        }
+
         secondOpacity = secondOpacity + 0.01;
     }
 
     if(frameNumber >= 3600 && frameNumber < 99999){
-        context.font = "30px Comic Sans MS";
         context.fillStyle = `rgba(45, 45, 255, ${thirdOpacity})`;
-        context.textAlign = `center`;
-        context.fillText("Happy Valentine's Day <3", canvas.width/2, (canvas.height/2 + 100));
+        context.fillText("Happy Valentine's Day <3", canvas.width/2, (canvas.height/2 + 120));
         thirdOpacity = thirdOpacity + 0.01;
     }   
     
@@ -179,5 +202,11 @@ function draw() {
     }
     window.requestAnimationFrame(draw);
 }
+
+window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    baseFrame = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
+});
 
 window.requestAnimationFrame(draw);
