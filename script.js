@@ -48,6 +48,14 @@ function updateStars() {
     }
 }
 
+const button = document.getElementById("valentinesButton");
+
+button.addEventListener("click", () => {
+  if (button.textContent === "Click Me! ❤") {
+    button.textContent = "Check Your Email 🙃";
+  }
+});
+
 function drawTextWithLineBreaks(lines, x, y, fontSize, lineHeight) {
     lines.forEach((line, index) => {
         context.fillText(line, x, y + index * (fontSize + lineHeight));
@@ -186,6 +194,8 @@ function drawText() {
         context.fillStyle = `rgba(45, 45, 255, ${thirdOpacity})`;
         context.fillText("Happy Valentine's Day <3", canvas.width/2, (canvas.height/2 + 120));
         thirdOpacity = thirdOpacity + 0.01;
+
+        button.style.display = "block";
     }   
     
 }
