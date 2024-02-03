@@ -14,6 +14,10 @@ Features added:
 - mobile responsiveness
 - send email functionality
 
+## Third-Party Libraries
+
+This project uses [PHPMailer](https://github.com/PHPMailer/PHPMailer), which is licensed under the GNU Lesser General Public License (LGPL) version 2.1.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
