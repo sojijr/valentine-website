@@ -12,9 +12,10 @@ canvas {
 }
 
 #valentinesButton {
+    display: none;
     position: absolute;
     background-color: #2d2dff;
-    display: none;
+    border: 2px solid #2d2dff;
     color: #fff;
     cursor: pointer;
     height: 50px;
