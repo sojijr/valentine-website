@@ -15,6 +15,7 @@ This project is based on [in-all-the-stars](https://github.com/KalDrongo/in-all-
 - cursor change
 - mobile responsiveness
 - send email functionality
+- text glow effect
 
 ## ⚒️ Languages / Library
 - HTML
