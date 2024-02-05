@@ -77,7 +77,7 @@ function drawTextWithLineBreaks(lines, x, y, fontSize, lineHeight) {
 }
 
 function drawText() {
-    var fontSize = Math.min(30, window.innerWidth / 25); // Adjust font size based on screen width
+    var fontSize = Math.min(30, window.innerWidth / 24); // Adjust font size based on screen width
     var lineHeight = 8;
 
     context.font = fontSize + "px Comic Sans MS";
@@ -202,7 +202,7 @@ function drawText() {
 
 
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["and I can't wait to spend all the time in", "the world to share that love with you!"], canvas.width / 2, (canvas.height/2 + 70), fontSize, lineHeight);
+            drawTextWithLineBreaks(["and I can't wait to spend all the time in", "the world to share that love with you!"], canvas.width / 2, (canvas.height/2 + 60), fontSize, lineHeight);
         } else {
             context.fillText("and I can't wait to spend all the time in the world to share that love with you!", canvas.width/2, (canvas.height/2 + 50));
         }
