@@ -82,6 +82,12 @@ function drawText() {
 
     context.font = fontSize + "px Comic Sans MS";
     context.textAlign = "center";
+    
+    // glow effect
+    context.shadowColor = "rgba(45, 45, 255, 1)";
+    context.shadowBlur = 8;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
 
     if(frameNumber < 250){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
@@ -211,7 +217,12 @@ function drawText() {
 
         button.style.display = "block";
     }   
-    
+
+     // Reset the shadow effect after drawing the text
+     context.shadowColor = "transparent";
+     context.shadowBlur = 0;
+     context.shadowOffsetX = 0;
+     context.shadowOffsetY = 0;
 }
 
 function draw() {
